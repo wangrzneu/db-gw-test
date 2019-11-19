@@ -13,7 +13,7 @@ func main(){
 	var addr string
 	flag.StringVar(&addr, "a", "127.0.0.1", "db gw address")
 	flag.Parse()
-	db, err := sql.Open("mysql", fmt.Sprintf("root:Pwd_123456_Pwd@%v/test", addr))
+	db, err := sql.Open("mysql", fmt.Sprintf("root:Pwd_123456_Pwd@tcp(%v)/test", addr))
 	if err != nil {
 		log.Fatalf("fail to open sql: %v", err)
 	}
@@ -35,5 +35,4 @@ func main(){
 			log.Printf("id: %v, arg: %v", id, arg)
 		}
 	}
-	fmt.Printf("%v:%v", db, err)
 }
