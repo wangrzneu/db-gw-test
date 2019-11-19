@@ -1,12 +1,13 @@
 package main
 
 import (
+	"database/sql"
 	"flag"
 	"fmt"
 	"log"
+
+	_ "github.com/go-sql-driver/mysql"
 )
-import "database/sql"
-import _ "github.com/go-sql-driver/mysql"
 
 func main(){
 	var addr string
